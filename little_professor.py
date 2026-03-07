@@ -35,20 +35,25 @@ def generate_integer(b):
       print(f"Score is {sum1}")
   elif b == 2:
     sum = 0
-    for i in range(1,17):
+    for i in range(1,18):
       try:
         x = random.choice([1,2,3,4,5,6,7,8,9])
         y = random.choice([1,2,3,4,5,6,7,8,9])
         t = random.choice(["+", "-"])
         inputp= int(input(f"{x} {t} {y} = "))
         if t == "+":
-           if x + y == inputp:
-              sum0 = sum + i
-              print(sum0)
+          if x + y == inputp:
+            for j in range(1, 18):
+              sum = sum + j
+              break
+          else:
+            print("EEE")
+            continue
         elif t == "-":
           if x - y == inputp:
-            sum0 = sum + i
-            print(sum0)
+            for j in range(1, 18):
+              sum= sum + j
+              break
           else:
             print("EEE")
             continue
@@ -58,7 +63,7 @@ def generate_integer(b):
       except KeyboardInterrupt:
          print("Are you want to exit type 'exit")
 
-    print(f"Score is {sum1}")
+    print(f"Score is {sum} ")
        
 if __name__ == "__main__":
     main()

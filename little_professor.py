@@ -18,7 +18,7 @@ def get_level():
 def generate_integer(b):
   if b == 1:
     sum = 0
-    for i in range(0,17):
+    for i in range(1,17):
       try:
         x = random.choice([1,2,3,4,5,6,7,8,9])
         y = random.choice([1,2,3,4,5,6,7,8,9])
@@ -32,7 +32,7 @@ def generate_integer(b):
           print("EEE")
           continue
       
-      print(f"Score is {sum}")
+      print(f"Score is {sum0}")
   elif b == 2:
     sum = 0
     for i in range(0,17):
@@ -41,15 +41,17 @@ def generate_integer(b):
         y = random.choice([1,2,3,4,5,6,7,8,9])
         t = random.choice(["+", "-"])
         inputp= int(input(f"{x} {t} {y} = "))
-        if x+y == inputp:
-          sum += i
-        elif x-y == inputp:
-           sum += i
-        elif (x+y or x-y) == "exit":
-           break
-        else:
-           print("EEE")
-           continue
+        if t == "+":
+           if x + y == inputp:
+              sum0 = sum + i
+              print(sum0)
+        elif t == "-":
+          if x - y == inputp:
+            sum0 = sum + i
+            print(sum0)
+          else:
+            print("EEE")
+            continue
       except ValueError:
           print("EEE")
           continue

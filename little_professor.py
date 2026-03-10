@@ -1,4 +1,5 @@
 import random
+import math
 
 def main():
   get_level() 
@@ -52,6 +53,52 @@ def generate_integer(b):
         elif t == "-":
           if x - y == inputp:
             for j in range(1, 18):
+              sum= sum + j
+              break
+          else:
+            print("EEE")
+            continue
+      except ValueError:
+          print("EEE")
+          continue
+      except KeyboardInterrupt:
+         print("Are you want to exit type 'exit")
+
+    print(f"Score is {sum} ")
+  elif b == 3:
+    sum = 0
+    for i in range(1, 18):
+      try:
+        x = random.choice([1,2,3,4,5,6,7,8,9])
+        y = random.choice([1,2,3,4,5,6,7,8,9])
+        t = random.choice(["+", "-", "*", "/"])
+        inputp= int(input(f"{x} + {y} = "))
+        if t == "+":
+          if x + y == inputp:
+            for j in range(1, 18):
+              sum = sum + j
+              break
+          else:
+            print("EEE")
+            continue
+        elif t == "-":
+          if x - y == inputp:
+            for j in range(1, 18):
+              sum= sum + j
+              break
+          else:
+            print("EEE")
+            continue
+        elif t == "*":
+          if x * y == inputp:
+            for j in range(1, 18):
+              sum = sum + j
+              break
+          else:
+            print("EEE")
+            continue
+        elif x / y == inputp:
+          for j in range(1, 18):
               sum= sum + j
               break
           else:

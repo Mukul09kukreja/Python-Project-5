@@ -74,6 +74,9 @@ def generate_integer(b):
         x = random.choice([1,2,3,4,5,6,7,8,9])
         y = random.choice([1,2,3,4,5,6,7,8,9])
         t = random.choice(["+", "-", "*", "/"])
+        if t == "/":
+          print("Just put integer value of division")
+
         inputp= int(input(f"{x} {t} {y} = "))
 
         if t == "+":
@@ -101,7 +104,6 @@ def generate_integer(b):
             print("EEE")
             continue
         elif t == "/":
-          print("Just put integer value of division")
           float(x)
           float(y)
           if x/y == float(inputp):
